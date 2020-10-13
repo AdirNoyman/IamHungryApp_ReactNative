@@ -7,7 +7,6 @@ import useResults from '../hooks/useResults';
 const SearchScreen = () => {
   const [term, setTerm] = useState('');
   const [searchApi, results, errorMessage] = useResults();
-  console.log(results);
 
   const filterResultsByPrice = (price) => {
     return results.filter((result) => {
@@ -16,7 +15,7 @@ const SearchScreen = () => {
   };
 
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <SearchBar
         term={term}
         onTermChange={setTerm}
